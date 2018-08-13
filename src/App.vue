@@ -43,7 +43,6 @@ export default {
     getMenu: function () {
       fetch('https://dev.menu.ninja/api/menu/156?key=8j5vfe%24*pfb**rzt&pretty=1')
         .then((data)=>{
-          console.log('hellooo');
           return data.json()
         })
         .then((data)=>{
@@ -76,6 +75,17 @@ export default {
   padding: 40px;
   max-width: 1100px;
   margin: auto;
+}
+
+#toast-container {
+  z-index: 10;
+  background-color: cream;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 p{
