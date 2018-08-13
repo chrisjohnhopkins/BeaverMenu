@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <div class="container">
+    <h1>Beaver Menu.</h1>
       <div class="menu col-50">
-        <h1>Beaver Menu.</h1>
         <ul v-if="menu && menu.length">
           <li v-for ="item in menu">
             <MenuItem v-bind:item="item"/>
           </li>
         </ul>
+      </div>
+      <div class="sign-up col-50">
+        <Enquiry/>
       </div>
     </div>
   </div>
@@ -15,16 +18,22 @@
 
 <script>
 import MenuItem from './components/MenuItem'
+import Enquiry from './components/Enquiry'
 
 export default {
   name: 'App',
   components: {
-    MenuItem
+    MenuItem,
+    Enquiry
   },
   data () {
     return {
       loading: true,
-      menu: null
+      menu: null,
+      newCustomer: {
+        name: '',
+        email: ''
+      }
     }
   },
   created () {
@@ -62,12 +71,21 @@ export default {
 
 .container {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+p{
+  margin-top: 0px;
 }
 
 .col-50 {
   width: 50%;
+  padding: 26px;
+  box-sizing: border-box;
 }
 
 body {
@@ -78,6 +96,8 @@ h1 {
   margin-top: 0px;
   font-size: 40px;
   text-transform: uppercase;
+  flex: 0 1 100%;
+  margin-bottom: 0px;
 }
 
 ul {
