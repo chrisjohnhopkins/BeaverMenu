@@ -30,7 +30,7 @@
             <textarea name="message" type="text" v-validate="{ required: true}" id="email" class="form-control" v-model="newCustomer.enquiry"></textarea>
             <span v-show="errors.has('message')">{{ errors.first('message') }}</span>
           </div>
-          <input type="submit" class="btn btn-primary" value="Sign up">
+          <input type="submit" class="btn btn-primary" value="Submit">
         </form>
       </div>
     </div>
@@ -105,6 +105,7 @@ h2 {
   text-transform: uppercase;
   flex: 0 1 100%;
   margin-bottom: 0px;
+  font-weight: bold;
 }
 
 input, textarea {
@@ -127,5 +128,13 @@ input.btn.btn-primary {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 30px;
 }
+
+@media all and (max-width: 500px){
+  input, textarea {
+    width: auto!important;
+  }
+}
+
 </style>

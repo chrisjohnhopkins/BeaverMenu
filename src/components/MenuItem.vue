@@ -15,9 +15,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0px;
+  font-weight: bolder;
 }
 
 p {

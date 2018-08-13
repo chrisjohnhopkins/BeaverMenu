@@ -108,6 +108,7 @@ h1 {
   text-transform: uppercase;
   flex: 0 1 100%;
   margin-bottom: 0px;
+  font-weight: bolder;
 }
 
 ul {
@@ -115,4 +116,23 @@ ul {
   list-style-type: none;
   padding: 0px;
 }
+
+@media screen and (max-width: 750px){
+  .col-50 {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 500px){
+  .container {
+    padding: 0px;
+  }
+  h1 {
+    padding: 13px 26px;
+  }
+  .menu.col-50{
+    padding-top: 0px;
+  }
+}
+
 </style>
