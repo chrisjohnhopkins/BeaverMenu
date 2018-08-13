@@ -77,17 +77,6 @@ export default {
   margin: auto;
 }
 
-#toast-container {
-  z-index: 10;
-  background-color: cream;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  height: 100px;
-  width: 100px;
-  border-radius: 5px;
-}
-
 p{
   margin-top: 0px;
 }
@@ -115,6 +104,28 @@ ul {
   margin: 0px;
   list-style-type: none;
   padding: 0px;
+}
+
+.toast-success .toast-message h3 {
+  margin: 0px;
+}
+
+.toast-success .toast-message {
+  z-index: 10;
+  background-color: rgba(255,255,255, 1);
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: auto;
+  width: 200px;
+  border-radius: 5px;
+  font-family: Avenir!important;
+  padding: 13px;
+}
+
+#toast-container > .toast-success {
+  background-image: none!important;
+  background-color: #eee!important;
 }
 
 @media screen and (max-width: 750px){

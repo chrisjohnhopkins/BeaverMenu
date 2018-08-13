@@ -68,7 +68,7 @@ export default {
         if (result) {
           customersRef.push(this.newCustomer)
             .then((data)=>{
-                toastr.success('You have been added to the mailing list');
+                toastr.success('<h3>Success!</h5>Your enquiry has been added to the database and we will get back to you shortly');
                 this.newCustomer.name = '';
                 this.newCustomer.email = '';
                 this.newCustomer.company = '';
