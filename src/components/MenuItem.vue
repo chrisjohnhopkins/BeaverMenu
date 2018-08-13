@@ -8,21 +8,16 @@
 <script>
 export default {
   name: 'MenuItem',
-  props: ['item'],
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  props: ['item']
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0px;
+  font-weight: bolder;
 }
 
 p {

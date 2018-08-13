@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <div class="container">
+    <h1>Beaver Menu.</h1>
       <div class="menu col-50">
-        <h1>Beaver Menu.</h1>
         <ul v-if="menu && menu.length">
           <li v-for ="item in menu">
             <MenuItem v-bind:item="item"/>
           </li>
         </ul>
+      </div>
+      <div class="sign-up col-50">
+        <Enquiry/>
       </div>
     </div>
   </div>
@@ -15,16 +18,22 @@
 
 <script>
 import MenuItem from './components/MenuItem'
+import Enquiry from './components/Enquiry'
 
 export default {
   name: 'App',
   components: {
-    MenuItem
+    MenuItem,
+    Enquiry
   },
   data () {
     return {
       loading: true,
-      menu: null
+      menu: null,
+      newCustomer: {
+        name: '',
+        email: ''
+      }
     }
   },
   created () {
@@ -34,7 +43,6 @@ export default {
     getMenu: function () {
       fetch('https://dev.menu.ninja/api/menu/156?key=8j5vfe%24*pfb**rzt&pretty=1')
         .then((data)=>{
-          console.log('hellooo');
           return data.json()
         })
         .then((data)=>{
@@ -62,12 +70,32 @@ export default {
 
 .container {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+#toast-container {
+  z-index: 10;
+  background-color: cream;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+p{
+  margin-top: 0px;
 }
 
 .col-50 {
   width: 50%;
+  padding: 26px;
+  box-sizing: border-box;
 }
 
 body {
@@ -78,6 +106,9 @@ h1 {
   margin-top: 0px;
   font-size: 40px;
   text-transform: uppercase;
+  flex: 0 1 100%;
+  margin-bottom: 0px;
+  font-weight: bolder;
 }
 
 ul {
@@ -85,4 +116,23 @@ ul {
   list-style-type: none;
   padding: 0px;
 }
+
+@media screen and (max-width: 750px){
+  .col-50 {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 500px){
+  .container {
+    padding: 0px;
+  }
+  h1 {
+    padding: 13px 26px;
+  }
+  .menu.col-50{
+    padding-top: 0px;
+  }
+}
+
 </style>
