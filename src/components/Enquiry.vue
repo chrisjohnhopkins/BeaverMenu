@@ -109,9 +109,11 @@ h2 {
 }
 
 input, textarea {
-  width: 280px;
+  width: 100%;
   padding: 8px 13px;
   font-size: 15px;
+  display: block;
+  box-sizing: border-box;
 }
 
 textarea {
@@ -129,12 +131,6 @@ input.btn.btn-primary {
   font-size: 20px;
   cursor: pointer;
   margin-top: 30px;
-}
-
-@media all and (max-width: 500px){
-  input, textarea {
-    width: auto!important;
-  }
 }
 
 </style>

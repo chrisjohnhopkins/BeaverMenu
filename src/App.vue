@@ -2,16 +2,16 @@
   <div id="app">
     <div class="container">
     <h1>Beaver Menu.</h1>
-      <div class="menu col-50">
-        <ul v-if="menu && menu.length">
-          <li v-for ="item in menu">
-            <MenuItem v-bind:item="item"/>
-          </li>
-        </ul>
-      </div>
-      <div class="sign-up col-50">
-        <Enquiry/>
-      </div>
+    <div class="menu col-50">
+      <ul v-if="menu && menu.length">
+        <li v-for ="item in menu">
+          <MenuItem v-bind:item="item"/>
+        </li>
+      </ul>
+    </div>
+    <div class="sign-up col-50">
+      <Enquiry/>
+    </div>
     </div>
   </div>
 </template>
